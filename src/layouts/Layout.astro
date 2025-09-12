@@ -1,5 +1,14 @@
 ---
 import "../styles/global.css";
+
+
+const canonical = new URL(Astro.url.pathname, "https://rabiibouhestine.com").href;
+
+const title = "Rabii Bouhestine"
+const description = "I am a Software Engineer specialising in Frontend Development with 7+ years of experience in building web apps. I have had the opportunity of collaborating with diverse businesses, companies, and agencies worldwide since 2018."
+const author = "Rabii Bouhestine"
+const url = "https://rabiibouhestine.com"
+const preview = "https://rabiibouhestine.com/preview.png"
 ---
 
 <!doctype html>
@@ -7,9 +16,57 @@ import "../styles/global.css";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Rabii Bouhestine</title>
+		<!-- SEO de base -->
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content={author} />
+		<meta name="robots" content="index, follow" />
+		<!-- Sitemap -->
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<!-- Canonical -->
+		<link rel="canonical" href={canonical} />
+		<!-- favicon -->
+		<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+		<meta name="apple-mobile-web-app-title" content="Rabii Bouhestine" />
+		<link rel="manifest" href="/favicon/site.webmanifest" />
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={preview} />
+		<meta property="og:locale" content="en_EN" />
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={preview} />
+		<!-- Structured Data Markup -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": "https://rabiibouhestine.com",
+			"name": "Rabii Bouhestine",
+			"jobTitle": "Frontend Developer",
+			"author": {
+				"@type": "Person",
+				"name": "Rabii Bouhestine",
+				"url": "https://rabiibouhestine.com"
+			},
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://rabiibouhestine.com"
+			}
+		}
+		</script>
+		<!-- Analytics -->
+		<script data-goatcounter="https://rabiibouhestine.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 	</head>
 	<body>
 		<slot />
