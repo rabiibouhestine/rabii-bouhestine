@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark-1: #0B192F;
-  --color-dark-2: #112240;
-  --color-dark-3: #233554;
-  --color-light-1: #CCD6F6;
-  --color-light-2: #8892AF;
-  --color-accent: #64FFDA;
+  --color-dark-1: #191B22;
+  --color-dark-2: #23272F;
+  --color-dark-3: #484c55;
+  --color-light-1: #F6F7F9;
+  --color-light-2: #98A1B2;
+  --color-accent: #57C4DC;
 }
 
 @layer base {
@@ -22,8 +22,13 @@
 		margin-inline: auto;
     padding-inline: 24px;
   }
-  h1, .title {
+  h1 {
     font-size: clamp(40px, 5vw, 80px) !important;
+    font-weight: var(--font-weight-extrabold);
+    line-height: 110%;
+  }
+  .title {
+    font-size: clamp(32px, 4vw, 64px) !important;
     font-weight: var(--font-weight-extrabold);
     line-height: 110%;
   }

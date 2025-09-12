@@ -1,26 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import JobItem from '../components/JobItem.astro';
+import Project from '../components/Project.astro';
 
 import { Image } from 'astro:assets';
 
-import { BriefcaseBusiness, Laptop, SquareUser, SquareCheckBig } from '@lucide/astro';
+import { Send, BriefcaseBusiness, Laptop, SquareUser, SquareCheckBig } from '@lucide/astro';
 
-import myPicture from '../assets/me.jpg'
+import myPicture from '../assets/me.jpg';
+import dabbergame from '../assets/dabbergame.png';
+import simplymadereadme from '../assets/simplyreadme.png';
+import playcardgames from '../assets/playcardgames.png';
+import rhackers from '../assets/rhackers.png';
 ---
 
 <Layout>
-	<section class="h-screen flex flex-col justify-center">
+	<header class="h-16 py-4">
+		<nav class="flex items-center justify-center gap-6 text-xl text-light-2">
+			<a href="#about" class="flex items-center gap-1 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full hover:text-light-1">
+				<SquareUser size="24" stroke-width={1} class="text-accent"/>
+				About
+			</a>
+			<a href="#work" class="flex items-center gap-1 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full hover:text-light-1">
+				<BriefcaseBusiness size="24" stroke-width={1} class="text-accent"/>
+				Work
+			</a>
+			<a href="#projects" class="flex items-center gap-1 relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full hover:text-light-1">
+				<Laptop size="24" stroke-width={1} class="text-accent"/>
+				Projects
+			</a>
+		</nav>
+	</header>
+	<section class="h-[calc(100vh-64px)] flex flex-col items-center text-center justify-center">
 		<span class="text-accent text-lg font-mono mb-4">Hi, my name is</span>
-		<h1>Rabii<br class="block md:hidden"> Bouhestine.</h1>
-		<span class="title text-light-2 mb-6">I build things<br class="block md:hidden"> for the web.</span>
+		<h1>Rabii Bouhestine</h1>
+		<div class="title text-light-2 mt-2 mb-6 flex flex-wrap items-center justify-center">
+			<span>I build things&nbsp;</span>
+			<span>for the web</span>
+		</div>
 		<p class="max-w-2xl mb-10">
-			I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences.
-			Currently, I’m focused on building accessible, human-centered products at Upstatement.
+			I am a Software Engineer specialising in Frontend Development with 7+ years of experience in building web apps. I have had the opportunity of collaborating with diverse businesses, companies, and agencies worldwide since 2018.
 		</p>
-		<a class="font-mono border-1 border-accent rounded-lg px-6 py-3 w-fit text-accent hover:text-dark-1 hover:bg-accent transition-all duration-300 ease-in-out">Check out my resume!</a>
+		<a href="mailto:rabiibouhestine@gmail.com" class="flex items-center gap-3 font-mono border-1 border-accent rounded-lg px-6 py-3 w-fit text-accent hover:text-dark-1 hover:bg-accent transition-all duration-300 ease-in-out">
+			<Send/>
+			Get in touch!
+		</a>
 	</section>
-	<section>
+	<section id="about">
 		<div class="flex gap-2 items-center mb-12">
 			<SquareUser size="32" stroke-width={1} class="text-accent"/>
 			<h2>About Me</h2>
@@ -29,19 +55,13 @@ import myPicture from '../assets/me.jpg'
 		<div class="flex flex-col lg:flex-row gap-16">
 			<div class="flex flex-col gap-4">
 				<p>
-					Hello! My name is Brittany and I enjoy creating things that live on the internet.
-					My interest in web development started back in 2012 when I decided to try editing custom
-					Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+					Hello! My name is Rabii and I’ve had the opportunity to work across different environments; from freelancing on small passion projects, to collaborating with start-ups, to contributing at established companies where scalability and performance were key. Each step has shaped the way I think about building interfaces: balancing clean design with practical code, and always keeping the user’s experience front and center.
 				</p>
 				<p>
-					Fast-forward to today, and I’ve had the privilege of working at an advertising agency,
-					a start-up, a huge corporation, and a student-led design studio.
-					My main focus these days is building accessible, inclusive products and digital experiences
-					at Upstatement for a variety of clients.
+					These days, my focus is on crafting modern, responsive, and accessible frontend experiences using React, Astro, and Tailwind. I enjoy the challenge of translating complex ideas into intuitive products that feel simple to use.
 				</p>
 				<p>
-					I also recently launched a course that covers everything you need to build a
-					web app with the Spotify API using Node & React.
+					Beyond client work, I’m constantly experimenting with new tools and workflows, whether it’s exploring design systems or automating deployment pipelines, always looking for ways to push my craft forward.
 				</p>
 				<p>
 					Here are a few technologies I’ve been working with recently:
@@ -49,7 +69,7 @@ import myPicture from '../assets/me.jpg'
 				<div class="grid grid-cols-3 gap-2">
 					<div class="flex items-center gap-2">
 						<SquareCheckBig stroke-width={1} class="text-accent"/>
-						<p>Javascript</p>
+						<p>React</p>
 					</div>
 					<div class="flex items-center gap-2">
 						<SquareCheckBig stroke-width={1} class="text-accent"/>
@@ -57,42 +77,37 @@ import myPicture from '../assets/me.jpg'
 					</div>
 					<div class="flex items-center gap-2">
 						<SquareCheckBig stroke-width={1} class="text-accent"/>
-						<p>Javascript</p>
+						<p>Typescript</p>
 					</div>
 					<div class="flex items-center gap-2">
 						<SquareCheckBig stroke-width={1} class="text-accent"/>
-						<p>Javascript</p>
+						<p>Node.js</p>
 					</div>
 					<div class="flex items-center gap-2">
 						<SquareCheckBig stroke-width={1} class="text-accent"/>
-						<p>Javascript</p>
+						<p>Astro</p>
 					</div>
 					<div class="flex items-center gap-2">
 						<SquareCheckBig stroke-width={1} class="text-accent"/>
-						<p>Javascript</p>
+						<p>Tailwind</p>
 					</div>
 				</div>
 			</div>
-			<div class="relative inline-block group self-center lg:self-auto">
-				<div class="bg-accent z-10 w-[300px] rounded-lg overflow-hidden transition-transform duration-300 ease-in-out -translate-x-[10px] -translate-y-[10px] group-hover:translate-x-0 group-hover:translate-y-0">
-					<Image
-						src={myPicture}
-						alt="Rabii Bouhestine"
-						layout="constrained"
-						class="relative w-full object-cover mix-blend-multiply transition duration-300 ease-in-out group-hover:mix-blend-normal"
-					/>
-				</div>
-				<div class="-z-10 absolute top-0 left-0 w-[300px] h-full border-2 border-accent rounded-lg translate-x-[10px] translate-y-[10px] transition-transform duration-300 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0" />
-			</div>
+			<Image
+				src={myPicture}
+				alt="Rabii Bouhestine"
+				layout="constrained"
+				class="min-w-[300px] object-cover rounded-lg self-center shadow-[10px_10px_0_0_var(--tw-shadow-color)] shadow-accent"
+			/>
 		</div>
 	</section>
-	<section class="mt-40">
+	<section id="work" class="mt-40">
 		<div class="flex gap-2 items-center mb-12">
 			<BriefcaseBusiness size="32" stroke-width={1} class="text-accent"/>
 			<h2>Where I've Worked</h2>
 			<div class="flex-1 ml-2 border-t-1 border-dark-3"></div>
 		</div>
-		<div class="flex flex-col gap-8">
+		<div class="flex flex-col">
 			<JobItem
 				role="Frontend Developer"
 				company="Appsilon"
@@ -128,43 +143,73 @@ import myPicture from '../assets/me.jpg'
 			/>
 		</div>
 	</section>
-	<section class="mt-40">
+	<section id="projects" class="mt-40">
 		<div class="flex gap-2 items-center mb-12">
 			<Laptop size="32" stroke-width={1} class="text-accent"/>
 			<h2>Some Things I’ve Built</h2>
 			<div class="flex-1 ml-2 border-t-1 border-dark-3"></div>
 		</div>
-
-		<div class="grid grid-cols-12 items-center relative">	
-			<div class="col-span-6 z-10 relative">
-				<Image
-					src={myPicture}
-					alt="Rabii Bouhestine"
-					layout="constrained"
-					class="relative w-full object-cover"
-				/>
-			</div>		
-			<div class="flex flex-col items-end col-start-6 col-span-7 z-20 relative">
-				<span class="text-accent">Featured Project</span>
-				<h3>Play Card Games</h3>
-				<p class="bg-dark-2 rounded px-8 py-4 text-right max-w-xl my-3">
-					A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.
-					Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.
-				</p>
-				<div class="flex gap-8 font-mono">
-					<p>VS Code</p>
-					<p>Sublime Text</p>
-					<p>Atom</p>
-					<p>Hyper</p>
-				</div>
-				<div class="flex gap-3 mt-2">
-					<Laptop size="24" stroke-width={1} class="text-light-2"/>
-					<Laptop size="24" stroke-width={1} class="text-light-2"/>
-				</div>
-			</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<Project
+				image={playcardgames}
+				name="PlayCardGames"
+				title="Online Card Games"
+				description="Engaging thematic solitaire card games that can be played with standard playing cards."
+				github="https://github.com/rabiibouhestine/playcardsgames"
+				website="https://play1card1games.netlify.app/"
+				skills={["PixiJS", "Sveltekit", "Svelte"]}
+			/>
+			<Project
+				image={dabbergame}
+				name="DabberGame"
+				title="Video Games Marketplace"
+				description="A Video Games Marketplace where users can easily sell, buy and trade video games."
+				github="https://github.com/rabiibouhestine/dabbergame.tn"
+				website="https://dabbergame.netlify.app/"
+				skills={["IGDB API", "Sveltekit", "Supabase"]}
+			/>
+			<Project
+				image={simplymadereadme}
+				name="SimplyMadeReadme"
+				title="Readme Maker"
+				description="A minimal readme maker that allows users to easily create a readme file using templates and blocks."
+				github="https://github.com/rabiibouhestine/simply-made-readme"
+				website="https://simplyreadme.netlify.app/"
+				skills={["Javascript", "CSS", "HTML"]}
+			/>
+			<Project
+				image={rhackers}
+				name="RHackers"
+				title="Find R Projects & Shiny Apps"
+				description="A directory for R Projects hosted on Github. Users can search for projects and R Shiny apps."
+				github="https://github.com/rabiibouhestine/rhackers"
+				website="https://rhackers.netlify.app/"
+				skills={["Github API", "React", "CSS", "HTML"]}
+			/>
 		</div>
-
 	</section>
-
-	<div class="mt-80"></div>
+	<footer class="mt-40 pt-4 pb-8 border-t-1 border-dark-3 flex items-end justify-between text-light-2">
+		&copy; 2025 Rabii Bouhestine.
+		<div class="flex gap-2">
+			<a href="mailto:rabiibouhestine@gmail.com" class="hover:text-accent">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="currentColor" fill="none">
+						<path d="M2 6L8.91302 9.91697C11.4616 11.361 12.5384 11.361 15.087 9.91697L22 6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+						<path d="M2.01577 13.4756C2.08114 16.5412 2.11383 18.0739 3.24496 19.2094C4.37608 20.3448 5.95033 20.3843 9.09883 20.4634C11.0393 20.5122 12.9607 20.5122 14.9012 20.4634C18.0497 20.3843 19.6239 20.3448 20.7551 19.2094C21.8862 18.0739 21.9189 16.5412 21.9842 13.4756C22.0053 12.4899 22.0053 11.5101 21.9842 10.5244C21.9189 7.45886 21.8862 5.92609 20.7551 4.79066C19.6239 3.65523 18.0497 3.61568 14.9012 3.53657C12.9607 3.48781 11.0393 3.48781 9.09882 3.53656C5.95033 3.61566 4.37608 3.65521 3.24495 4.79065C2.11382 5.92608 2.08114 7.45885 2.01576 10.5244C1.99474 11.5101 1.99475 12.4899 2.01577 13.4756Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+				</svg>
+			</a>
+			<a href="https://github.com/rabiibouhestine" target="_blank" class="hover:text-accent">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="currentColor" fill="none">
+					<path d="M6.51734 17.1132C6.91177 17.6905 8.10883 18.9228 9.74168 19.2333M9.86428 22C8.83582 21.8306 2 19.6057 2 12.0926C2 5.06329 8.0019 2 12.0008 2C15.9996 2 22 5.06329 22 12.0926C22 19.6057 15.1642 21.8306 14.1357 22C14.1357 22 13.9267 18.5826 14.0487 17.9969C14.1706 17.4113 13.7552 16.4688 13.7552 16.4688C14.7262 16.1055 16.2043 15.5847 16.7001 14.1874C17.0848 13.1032 17.3268 11.5288 16.2508 10.0489C16.2508 10.0489 16.5318 7.65809 15.9996 7.56548C15.4675 7.47287 13.8998 8.51192 13.8998 8.51192C13.4432 8.38248 12.4243 8.13476 12.0018 8.17939C11.5792 8.13476 10.5568 8.38248 10.1002 8.51192C10.1002 8.51192 8.53249 7.47287 8.00036 7.56548C7.46823 7.65809 7.74917 10.0489 7.74917 10.0489C6.67316 11.5288 6.91516 13.1032 7.2999 14.1874C7.79575 15.5847 9.27384 16.1055 10.2448 16.4688C10.2448 16.4688 9.82944 17.4113 9.95135 17.9969C10.0733 18.5826 9.86428 22 9.86428 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+				</svg>
+			</a>
+			<a href="https://www.linkedin.com/in/rabiibouhestine/" target="_blank" class="hover:text-accent">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="currentColor" fill="none">
+						<path d="M7 10V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11 13V17M11 13C11 11.3431 12.3431 10 14 10C15.6569 10 17 11.3431 17 13V17M11 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M7.00801 7L6.99902 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+				</svg>
+			</a>
+		</div>
+	</footer>
 </Layout>
