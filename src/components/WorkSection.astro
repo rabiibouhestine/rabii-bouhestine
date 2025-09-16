@@ -1,0 +1,47 @@
+---
+import JobCard from '../components/JobCard.astro';
+import { BriefcaseBusiness } from '@lucide/astro';
+---
+
+<section id="work" class="mt-40">
+  <div class="flex gap-2 items-center mb-12">
+    <BriefcaseBusiness size="32" stroke-width={1} class="text-accent"/>
+    <h2>Where I've Worked</h2>
+    <div class="flex-1 ml-2 border-t-1 border-dark-3"></div>
+  </div>
+  <div class="flex flex-col">
+    <JobCard
+      role="Frontend Developer"
+      company="Appsilon"
+      link="https://www.appsilon.com/"
+      start="Nov 2020"
+      end="Present"
+      tasks={[
+        "Collaborated with stakeholders across pharma, finance, and public sectors to design and deliver scalable, user-friendly web applications, improving decision-making workflows and user adoption.",
+        "Developed responsive interfaces and optimized app performance through modern frontend tools and best practices, ensuring maintainability and efficiency."
+      ]}
+    />
+    <JobCard
+      role="Frontend Developer"
+      company="Splio"
+      link="https://www.splio.com/"
+      start="Jul 2018"
+      end="Oct 2020"
+      tasks={[
+        "Partnered with stakeholders in the telecommunications sector to design and deliver a large-scale Business Intelligence platform with interactive dashboards, enabling data-driven decision-making.",
+        "Collaborated with cross-functional teams to analyze customer behavior, present insights, and streamline reporting workflows through automation, improving efficiency and business outcomes."
+      ]}
+    />
+    <JobCard
+      role="Software Engineer"
+      company="PwC France"
+      link="https://www.pwc.fr/"
+      start="Jan 2018"
+      end="Jun 2018"
+      tasks={[
+        "Built a data-driven application that collected and transformed large-scale sports data into feature-rich datasets, enabling predictive analytics.",
+        "Developed and deployed machine learning models to forecast outcomes with high accuracy, supporting informed decision-making for stakeholders."
+      ]}
+    />
+  </div>
+</section>

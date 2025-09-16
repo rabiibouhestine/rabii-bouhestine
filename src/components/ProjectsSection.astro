@@ -1,0 +1,55 @@
+---
+import ProjectCard from '../components/ProjectCard.astro';
+import { Laptop } from '@lucide/astro';
+
+import dabbergame from '../assets/dabbergame.png';
+import simplymadereadme from '../assets/simplyreadme.png';
+import playcardgames from '../assets/playcardgames.png';
+import rhackers from '../assets/rhackers.png';
+---
+
+<section id="projects" class="mt-40">
+  <div class="flex gap-2 items-center mb-12">
+    <Laptop size="32" stroke-width={1} class="text-accent"/>
+    <h2>Some Things I’ve Built</h2>
+    <div class="flex-1 ml-2 border-t-1 border-dark-3"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <ProjectCard
+      image={playcardgames}
+      name="PlayCardGames"
+      title="Online Card Games"
+      description="Engaging thematic solitaire card games that can be played with standard playing cards."
+      github="https://github.com/rabiibouhestine/playcardsgames"
+      website="https://play1card1games.netlify.app/"
+      skills={["PixiJS", "Sveltekit", "Svelte"]}
+    />
+    <ProjectCard
+      image={dabbergame}
+      name="DabberGame"
+      title="Video Games Marketplace"
+      description="A Video Games Marketplace where users can easily sell, buy and trade video games."
+      github="https://github.com/rabiibouhestine/dabbergame.tn"
+      website="https://dabbergame.netlify.app/"
+      skills={["IGDB API", "Sveltekit", "Supabase"]}
+    />
+    <ProjectCard
+      image={simplymadereadme}
+      name="SimplyMadeReadme"
+      title="Readme Maker"
+      description="A minimal readme maker that allows users to easily create a readme file using templates and blocks."
+      github="https://github.com/rabiibouhestine/simply-made-readme"
+      website="https://simplyreadme.netlify.app/"
+      skills={["Javascript", "CSS", "HTML"]}
+    />
+    <ProjectCard
+      image={rhackers}
+      name="RHackers"
+      title="Find R Projects & Shiny Apps"
+      description="A directory for R Projects hosted on Github. Users can search for projects and R Shiny apps."
+      github="https://github.com/rabiibouhestine/rhackers"
+      website="https://rhackers.netlify.app/"
+      skills={["Github API", "React", "CSS", "HTML"]}
+    />
+  </div>
+</section>

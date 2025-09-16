@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import { SquareUser, SquareCheckBig } from '@lucide/astro';
+
+import myPicture from '../assets/me.jpg';
+---
+
+<section id="about">
+  <div class="flex gap-2 items-center mb-12">
+    <SquareUser size="32" stroke-width={1} class="text-accent"/>
+    <h2>About Me</h2>
+    <div class="flex-1 ml-2 border-t-1 border-dark-3"></div>
+  </div>
+  <div class="flex flex-col lg:flex-row gap-16">
+    <div class="flex flex-col gap-4">
+      <p>
+        Hello! My name is Rabii and I’ve had the opportunity to work across different environments; from freelancing on small passion projects, to collaborating with start-ups, to contributing at established companies where scalability and performance were key. Each step has shaped the way I think about building interfaces: balancing clean design with practical code, and always keeping the user’s experience front and center.
+      </p>
+      <p>
+        These days, my focus is on crafting modern, responsive, and accessible frontend experiences using React, Astro, and Tailwind. I enjoy the challenge of translating complex ideas into intuitive products that feel simple to use.
+      </p>
+      <p>
+        Beyond client work, I’m constantly experimenting with new tools and workflows, whether it’s exploring design systems or automating deployment pipelines, always looking for ways to push my craft forward.
+      </p>
+      <p>
+        Here are a few technologies I’ve been working with recently:
+      </p>
+      <div class="grid grid-cols-3 gap-2">
+        <div class="flex items-center gap-2">
+          <SquareCheckBig stroke-width={1} class="text-accent"/>
+          <p>React</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <SquareCheckBig stroke-width={1} class="text-accent"/>
+          <p>Javascript</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <SquareCheckBig stroke-width={1} class="text-accent"/>
+          <p>Typescript</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <SquareCheckBig stroke-width={1} class="text-accent"/>
+          <p>Node.js</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <SquareCheckBig stroke-width={1} class="text-accent"/>
+          <p>Astro</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <SquareCheckBig stroke-width={1} class="text-accent"/>
+          <p>Tailwind</p>
+        </div>
+      </div>
+    </div>
+    <Image
+      src={myPicture}
+      alt="Rabii Bouhestine"
+      layout="constrained"
+      class="min-w-[300px] object-cover rounded-lg self-center shadow-[10px_10px_0_0_var(--tw-shadow-color)] shadow-accent"
+    />
+  </div>
+</section>
