@@ -14,7 +14,7 @@ const { role, company, link, start, end, tasks } = Astro.props;
 ---
 
 <a href={link} target="_blank" class="rounded-lg px-8 py-4 bg-dark-2 group">
-  <h3 class="mb-1 flex items-center gap-2 flex-wrap">
+  <h3 class="mb-1 flex flex-col md:flex-row items-start md:items-center gap-2">
     {role}
     <span class="text-accent flex items-center relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all after:duration-300 group-hover:after:w-full">
       @{company}
