@@ -10,10 +10,16 @@ import { Send } from '@lucide/astro';
     <span>for the web</span>
   </div>
   <p class="max-w-2xl mb-10">
-    I am a Software Engineer specialising in Frontend Development with 7+ years of experience in building web apps. I have had the opportunity of collaborating with diverse businesses, companies, and agencies worldwide since 2018.
+    I am a Software Engineer specialising in Frontend Development with <span id="experience">7</span>+ years of experience in building web apps. I have had the opportunity of collaborating with diverse businesses, companies, and agencies worldwide since 2018.
   </p>
   <a href="mailto:rabiibouhestine@gmail.com" class="flex items-center gap-3 font-mono border-1 border-accent rounded-lg px-6 py-3 w-fit text-accent hover:text-dark-1 hover:bg-accent transition-all duration-300 ease-in-out">
     <Send/>
     Get in touch!
   </a>
 </section>
+
+<script>
+  const el = document.getElementById('experience');
+  const exp = new Date().getFullYear() - 2018;
+  if (el) el.textContent = exp.toString();
+</script>
